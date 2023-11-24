@@ -58,7 +58,8 @@ PRODUCT_PACKAGES += \
     SettingsLibOverlayRaphael \
     TelecommResRaphael \
     TelephonyResRaphael \
-    WifiOverlay
+    WifiOverlay \
+    KProfilesOverlayRaphael
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
