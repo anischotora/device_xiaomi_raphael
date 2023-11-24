@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2023 Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Color of the UDFPS view -->
+    <color name="config_udfpsColor">#00ffffff</color>
+
+    <!-- Preferred max refresh rate at AOD & Ambient Display, if supported by the display. -->
+    <integer name="config_aodMaxRefreshRate">60</integer>
+
+    <!-- Preferred refresh rate at keyguard, if supported by the display -->
+    <integer name="config_keyguardRefreshRate">60</integer>
+
+    <!-- Preferred max refresh rate at keyguard, if supported by the display. -->
+    <integer name="config_keyguardMaxRefreshRate">60</integer>
+
+    <!-- Whether to find optimal display refresh rate when using udfps -->
+    <bool name="config_udfpsOptimalRefreshRate">false</bool>
+
+    <!-- Update battery info every second when device is charging -->
+    <bool name="config_alternateFastchargeInfoUpdate">true</bool>
+
+    <!-- Whether show refresh rate QS tile -->
+    <bool name="config_showRefreshRateQsTile">true</bool>
+</resources>

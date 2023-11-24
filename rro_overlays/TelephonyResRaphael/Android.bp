@@ -5,6 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "WifiOverlay",
-    product_specific: true
+    name: "TelephonyResRaphael",
+    product_specific: true,
 }

@@ -49,9 +49,16 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-yaap
+PRODUCT_PACKAGES += \
+    ApertureOverlayRaphael \
+    CarrierConfigOverlay \
+    FrameworksResOverlayRaphael \
+    SettingsOverlayRaphael \
+    SystemUIOverlayRaphael \
+    SettingsLibOverlayRaphael \
+    TelecommResRaphael \
+    TelephonyResRaphael \
+    WifiOverlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -431,7 +438,6 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay \
     android.hardware.radio@1.7.vendor \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
@@ -501,8 +507,7 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils-prd \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml \
-    telephony-ext \
-    TelephonyResRaphael
+    telephony-ext
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
@@ -551,7 +556,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     libwifi-hal-qcom \
     libwpa_client \
-    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
