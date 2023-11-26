@@ -36,6 +36,40 @@ on init
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
 
+    # Logger
+service boot_lc /system/bin/logcat -db all -D -f /cache/boot_lc_full.log
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_crash /system/bin/logcat -db crash -D -f /cache/boot_lc_crash.log
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_kernel /system/bin/logcat -db kernel -D -f /cache/boot_lc_kernel.log
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on post-fs-boot
+
+on property:sys.boot_completed=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
+
+on property:dev.bootcomplete=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
+
     # Boot time fs tuning
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
