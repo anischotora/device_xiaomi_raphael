@@ -412,6 +412,7 @@ PRODUCT_PACKAGES += \
 
 # qcom/common tree
 $(call inherit-product, device/qcom/common/common.mk)
+include vendor/qcom/opensource/core-utils/build/utils.mk
 TARGET_BOARD_PLATFORM := msmnile
 TARGET_USE_SM8150_HALS := true
 TARGET_EXCLUDE_QCOM_SEPOLICY := true
