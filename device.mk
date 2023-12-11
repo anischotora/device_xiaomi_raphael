@@ -262,6 +262,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health.storage@1.0-service
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.base@1.0.vendor \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
+# HotwordEnrollement
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/hotword-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hotword-hiddenapi-package-whitelist.xml \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+
 # IFAA manager
 PRODUCT_PACKAGES += \
     IFAAService
@@ -418,6 +432,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/configs/permissions/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext-privapp-permissions-qti.xml
 
+# QTI
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect \
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti \
+    libvndfwk_detect_jni.qti.vendor
+
 # Quick Tap
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.columbus.model=tap7cls_coral.tflite
@@ -523,6 +544,10 @@ PRODUCT_COPY_FILES += \
 # Touchscreen
 PRODUCT_PACKAGES += \
     libtinyxml2
+
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
 
 # VNDK
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
