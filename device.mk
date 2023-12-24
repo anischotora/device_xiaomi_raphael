@@ -479,8 +479,7 @@ PRODUCT_PACKAGES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom_ramdisk \
-    fstab.qcom \
-    fstab.zram
+    fstab.qcom
 
 PRODUCT_PACKAGES += \
     init.power.rc \
